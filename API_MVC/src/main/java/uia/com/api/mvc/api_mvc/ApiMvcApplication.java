@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Import;
 @ComponentScan(basePackages = "uia.com.api")
 @Import({AppMvcConfig.class})
 @EnableAutoConfiguration
+
 class ApiMvcApplication extends SpringBootServletInitializer {
     
     private static Class applicationClass = ApiMvcApplication.class;
@@ -25,6 +26,7 @@ class ApiMvcApplication extends SpringBootServletInitializer {
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(applicationClass);
+
 
     }
 

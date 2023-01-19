@@ -17,4 +17,5 @@ public class AppIniciador implements WebApplicationInitializer {
         servlet.addMapping("/");
 
     }
+
 }

@@ -8,6 +8,7 @@ public class ApiMvcRestApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ApiMvcRestApplication.class, args);
+
     }
 
 }

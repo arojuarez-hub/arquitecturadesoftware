@@ -5,19 +5,15 @@ import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Validator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import uia.com.api.inventario.dto.ProveedoresDTO;
 import uia.com.api.inventario.dto.ProveedorDTO;
 import uia.com.api.inventario.dto.ProveedoresDTO;
 import uia.com.api.inventario.mapper.ApiMapper;
 import uia.com.api.inventario.mapper.ApiMapperProveedor;
-import uia.com.api.inventario.mapper.ApiMapperProveedor;
 import uia.com.api.inventario.model.Lote;
-import uia.com.api.inventario.model.Proveedor;
 import uia.com.api.inventario.model.Proveedor;
 import uia.com.api.inventario.repository.LoteRepository;
 import uia.com.api.inventario.repository.ProveedorRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -33,13 +29,12 @@ public class ProveedorService {
         this.repositoryLote = repositoryLote;
         this.validator = validator;
     }
-    public ProveedorDTO save(ProveedorDTO item)
-    {
+
+    public ProveedorDTO save(ProveedorDTO item) {
         return saveInformation(item);
     }
 
-    public ProveedoresDTO save(ProveedoresDTO item)
-    {
+    public ProveedoresDTO save(ProveedoresDTO item) {
         return saveInformation(item);
     }
 
@@ -47,12 +42,11 @@ public class ProveedorService {
         return saveInformation(item);
     }
 
-    private ProveedorDTO saveInformation(ProveedorDTO item)
-    {
+    private ProveedorDTO saveInformation(ProveedorDTO item) {
         Proveedor entity = ApiMapper.INSTANCE.DTOToEntity(item);
 
         Set<ConstraintViolation<Proveedor>> violations = validator.validate(entity);
-        if(!violations.isEmpty()) {
+        if (!violations.isEmpty()) {
             throw new ConstraintViolationException(violations);
         }
 

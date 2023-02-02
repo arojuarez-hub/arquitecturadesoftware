@@ -1,4 +1,4 @@
-package uia.com.api.neo4jinventario.controller;
+package uia.com.api.inventario.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,10 +21,8 @@ public class EmbalajesController {
         this.embalajeService = embalajeService;
     }
 
-
     @PostMapping
-    public ResponseEntity<EmbalajesDTO> save(@RequestBody EmbalajesDTO embalajesDTO)
-    {
+    public ResponseEntity<EmbalajesDTO> save(@RequestBody EmbalajesDTO embalajesDTO) {
         EmbalajesDTO response = embalajeService.save(embalajesDTO);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }

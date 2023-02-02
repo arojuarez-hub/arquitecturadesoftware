@@ -2,11 +2,8 @@ package uia.com.api.inventario.model;
 
 import org.springframework.data.neo4j.core.schema.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Node("Lote")
-public class Lote{
+public class Lote {
     @Id
     @GeneratedValue
     private Long id;
@@ -24,8 +21,7 @@ public class Lote{
     @Relationship(type = "EMPACADO_CON")
     private Embalaje embalaje;
 
-    public Lote(Long id,  String name,  String descripcion, String estatus, String clase, String fechaIngreso, String nameEmbalaje)
-    {
+    public Lote(Long id, String name, String descripcion, String estatus, String clase, String fechaIngreso, String nameEmbalaje) {
         this.name = name;
         this.estatus = estatus;
         this.clase = clase;
@@ -69,7 +65,6 @@ public class Lote{
         this.clase = clase;
     }
 
-
     public String getDescripcion() {
         return descripcion;
     }
@@ -101,6 +96,5 @@ public class Lote{
     public void setNameEmbalaje(String nameEmbalaje) {
         this.nameEmbalaje = nameEmbalaje;
     }
-
 
 }

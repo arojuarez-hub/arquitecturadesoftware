@@ -1,10 +1,4 @@
-package uia.com.api.neo4jinventario.dto.;
-
-import uia.com.api.neo4jinventario.model.Item;
-import uia.com.api.neo4jinventario.model.Proveedor;
-
-import java.util.ArrayList;
-import java.util.List;
+package uia.com.api.inventario.dto;
 
 public class ItemDTO {
     private Long id;
@@ -28,7 +22,6 @@ public class ItemDTO {
         this.nameProveedor = nameProveedor;
     }
 
-
     public Long getId() {
         return id;
     }
@@ -44,7 +37,6 @@ public class ItemDTO {
     public void setName(String name) {
         this.name = name;
     }
-
 
     public String getPartida() {
         return partida;
@@ -85,5 +77,5 @@ public class ItemDTO {
     public void setNameProveedor(String nameProveedor) {
         this.nameProveedor = nameProveedor;
     }
-}
 
+}

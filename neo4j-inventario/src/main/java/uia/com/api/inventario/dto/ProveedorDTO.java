@@ -1,4 +1,4 @@
-package uia.com.api.neo4jinventario.dto;
+package uia.com.api.inventario.dto;
 
 public class ProveedorDTO {
     private Long id;
@@ -19,7 +19,6 @@ public class ProveedorDTO {
         this.clase = clase;
         this.nameLote = nameLote;
     }
-
 
     public Long getId() {
         return id;
@@ -68,4 +67,5 @@ public class ProveedorDTO {
     public void setNameLote(String nameLote) {
         this.nameLote = nameLote;
     }
+
 }

@@ -1,4 +1,5 @@
-package uia.com.api.neo4jinventario.model;
+package uia.com.api.inventario.model;
 
 public interface INivelInventario {
+    public void print();
 }

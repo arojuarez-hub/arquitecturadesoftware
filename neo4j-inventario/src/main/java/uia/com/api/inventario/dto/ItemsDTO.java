@@ -1,4 +1,4 @@
-package uia.com.api.neo4jinventario.dto;
+package uia.com.api.inventario.dto;
 
 import java.util.ArrayList;
 import java.util.List;

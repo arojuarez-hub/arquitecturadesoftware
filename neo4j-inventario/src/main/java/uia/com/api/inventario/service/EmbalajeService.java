@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import uia.com.api.inventario.dto.EmbalajeDTO;
 import uia.com.api.inventario.dto.EmbalajesDTO;
-import uia.com.api.inventario.mapper.ApiMapper;
 import uia.com.api.inventario.mapper.ApiMapperEmbalaje;
 import uia.com.api.inventario.model.Embalaje;
 import uia.com.api.inventario.repository.EmbalajeRepository;
@@ -26,13 +25,12 @@ public class EmbalajeService {
         this.repository = repository;
         this.validator = validator;
     }
-    public EmbalajeDTO save(EmbalajeDTO embalaje)
-    {
+
+    public EmbalajeDTO save(EmbalajeDTO embalaje) {
         return saveInformation(embalaje);
     }
 
-    public EmbalajesDTO save(EmbalajesDTO embalaje)
-    {
+    public EmbalajesDTO save(EmbalajesDTO embalaje) {
         return saveInformation(embalaje);
     }
 
@@ -40,12 +38,11 @@ public class EmbalajeService {
         return saveInformation(embalaje);
     }
 
-    private EmbalajeDTO saveInformation(EmbalajeDTO embalaje)
-    {
+    private EmbalajeDTO saveInformation(EmbalajeDTO embalaje) {
         Embalaje entity = ApiMapperEmbalaje.INSTANCE.DTOToEntity(embalaje);
 
         Set<ConstraintViolation<Embalaje>> violations = validator.validate(entity);
-        if(!violations.isEmpty()) {
+        if (!violations.isEmpty()) {
             throw new ConstraintViolationException(violations);
         }
 
@@ -53,16 +50,14 @@ public class EmbalajeService {
         return ApiMapperEmbalaje.INSTANCE.entityToDTO(savedEntity);
     }
 
-    private EmbalajesDTO saveInformation(EmbalajesDTO embalajes)
-    {
+    private EmbalajesDTO saveInformation(EmbalajesDTO embalajes) {
         List<Embalaje> entities = ApiMapperEmbalaje.INSTANCE.DTOToEntities(embalajes.getEmbalajes());
         List<EmbalajeDTO> entitiesDTO = new ArrayList<EmbalajeDTO>();
         EmbalajesDTO result = new EmbalajesDTO();
 
-        for(int i=0; i< entities.size(); i++)
-        {
+        for (int i = 0; i < entities.size(); i++) {
             Set<ConstraintViolation<Embalaje>> violations = validator.validate(entities.get(i));
-            if(!violations.isEmpty()) {
+            if (!violations.isEmpty()) {
                 throw new ConstraintViolationException(violations);
             }
 

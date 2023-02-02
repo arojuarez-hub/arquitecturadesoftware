@@ -1,4 +1,4 @@
-package uia.com.api.neo4jinventario.dto;
+package uia.com.api.inventario.dto;
 
 public class EmbalajeDTO {
     private Long id;
@@ -17,7 +17,6 @@ public class EmbalajeDTO {
         this.estatus = estatus;
         this.clase = clase;
     }
-
 
     public Long getId() {
         return id;
@@ -58,6 +57,5 @@ public class EmbalajeDTO {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-
 
 }

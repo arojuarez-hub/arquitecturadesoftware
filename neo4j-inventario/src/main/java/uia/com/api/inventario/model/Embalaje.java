@@ -1,10 +1,9 @@
 package uia.com.api.inventario.model;
 
-
-import org.springframework.data.neo4j.core.schema.*;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.data.neo4j.core.schema.GeneratedValue;
+import org.springframework.data.neo4j.core.schema.Id;
+import org.springframework.data.neo4j.core.schema.Node;
+import org.springframework.data.neo4j.core.schema.Property;
 
 @Node("Embalaje")
 public class Embalaje {
@@ -20,15 +19,14 @@ public class Embalaje {
     @Property("descripcion")
     private String descripcion;
 
-    public Embalaje(Long id, String name, String descripcion, String estatus, String clase)
-    {
+    public Embalaje() {
+    }
+
+    public Embalaje(Long id, String name, String descripcion, String estatus, String clase) {
         this.name = name;
         this.estatus = estatus;
         this.clase = clase;
         this.descripcion = descripcion;
-    }
-
-    public Embalaje() {
     }
 
     public Long getId() {
@@ -62,7 +60,6 @@ public class Embalaje {
     public void setClase(String clase) {
         this.clase = clase;
     }
-
 
     public String getDescripcion() {
         return descripcion;
